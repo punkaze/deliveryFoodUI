@@ -1,4 +1,4 @@
-import 'package:delivery_food_delyo/forgotPassword.dart';
+import 'package:delivery_food_delyo/ForgotPassword/forgotPassword.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:delivery_food_delyo/globalStyle.dart' as gb;

@@ -1,15 +1,13 @@
-import 'package:delivery_food_delyo/globalStyle.dart' as gb;
+import 'package:delivery_food_delyo/ForgotPassword/resetPassword.dart';
 import 'package:flutter/material.dart';
+import 'package:delivery_food_delyo/globalStyle.dart' as gb;
 
-class ForgotPasswordPage extends StatefulWidget {
+class ForgotRestorePassword extends StatefulWidget {
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _ForgotRestorePasswordState createState() => _ForgotRestorePasswordState();
 }
 
-class _ForgotPasswordState extends State<ForgotPasswordPage> {
-  TextEditingController userEmail = new TextEditingController();
-  bool validEmail = false;
-
+class _ForgotRestorePasswordState extends State<ForgotRestorePassword> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -36,14 +34,14 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 20, bottom: 40),
+                padding: const EdgeInsets.only(left: 20, bottom: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Container(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        'Forgot Password?',
+                        'Forgot Password',
                         style: TextStyle(
                             fontSize: 40, fontWeight: FontWeight.bold),
                       ),
@@ -51,37 +49,17 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                   ],
                 ),
               ),
-              Card(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  "You'll shortly receive an email with a code to set up a new password.",
+                  style: TextStyle(color: gb.elementGreyColor),
+                ),
+              ),
+              Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: TextField(
-                    cursorColor: gb.yellowColor,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      hintText: 'Enter Your Email',
-                      hintStyle: TextStyle(color: gb.hintTextColor),
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: gb.hintTextColor, width: 1.5)),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: gb.yellowColor)),
-                      suffixIcon: validEmail
-                          ? Icon(Icons.check, color: Colors.green)
-                          : null,
-                    ),
-                    controller: userEmail,
-                    onChanged: (value) {
-                      if (gb.validateEmail(value)) {
-                        setState(() {
-                          validEmail = true;
-                        });
-                      } else {
-                        setState(() {
-                          validEmail = false;
-                        });
-                      }
-                    },
-                  ),
+                  padding: const EdgeInsets.all(30),
+                  child: _codeField(context),
                 ),
               ),
               Padding(
@@ -102,7 +80,7 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                     shape: StadiumBorder(),
                     color: gb.yellowColor,
                     child: Text(
-                      'Send',
+                      'Restore Password',
                       style: TextStyle(
                           color: gb.elementGreyColor,
                           fontSize: 16,
@@ -110,10 +88,19 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                     ),
                     onPressed: () {
                       print('Send');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResetPassword()));
                     },
                   ),
                 ),
               ),
+              // TODO: Time ticker
+              Text(
+                "Resend confirmation code (1:11)",
+                style: TextStyle(color: gb.yellowColor),
+              )
             ],
           ),
         ),
@@ -121,7 +108,34 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
     );
   }
 
-  Widget _forgetPasswordDialog(BuildContext context) {
-    
+  Widget _codeField(BuildContext context) {
+    final children = <Widget>[];
+    final Widget boxField = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Container(
+        height: 60,
+        width: 50,
+        decoration: BoxDecoration(
+            color: Colors.black12, borderRadius: BorderRadius.circular(10)),
+        child: TextField(
+          obscureText: true,
+          cursorColor: gb.yellowColor,
+          keyboardType: TextInputType.number,
+          decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(20),
+              border: InputBorder.none,
+              counter: null),
+          // TODO:
+          onChanged: (val) {},
+        ),
+      ),
+    );
+    for (var i = 0; i < 4; i++) {
+      children.add(boxField);
+    }
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: children,
+    );
   }
 }
