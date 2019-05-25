@@ -2,7 +2,6 @@ import 'package:delivery_food_delyo/ForgotPassword/forgotPassword.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:delivery_food_delyo/globalStyle.dart' as gb;
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInPage extends StatefulWidget {
@@ -76,6 +75,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ),
               Card(
+                elevation: 5,
                 child: Padding(
                   padding: const EdgeInsets.all(30),
                   child: Column(

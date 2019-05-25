@@ -1,13 +1,12 @@
-import 'package:delivery_food_delyo/ForgotPassword/resetPassword.dart';
 import 'package:flutter/material.dart';
 import 'package:delivery_food_delyo/globalStyle.dart' as gb;
 
-class ForgotRestorePassword extends StatefulWidget {
+class VerifyNumberPage extends StatefulWidget {
   @override
-  _ForgotRestorePasswordState createState() => _ForgotRestorePasswordState();
+  _VerifyNumberState createState() => _VerifyNumberState();
 }
 
-class _ForgotRestorePasswordState extends State<ForgotRestorePassword> {
+class _VerifyNumberState extends State<VerifyNumberPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,28 +32,27 @@ class _ForgotRestorePasswordState extends State<ForgotRestorePassword> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(left: 20, bottom: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Text(
-                        'Forgot Password',
-                        style: TextStyle(
-                            fontSize: 40, fontWeight: FontWeight.bold),
-                      ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, bottom: 40),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'Verify',
+                          style:
+                              TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Your Number',
+                          style:
+                              TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Text(
-                  "You'll shortly receive an email with a code to set up a new password.",
-                  style: TextStyle(color: gb.elementGreyColor),
-                ),
+                  ),
+                ],
               ),
               Container(
                 child: Padding(
@@ -80,7 +78,7 @@ class _ForgotRestorePasswordState extends State<ForgotRestorePassword> {
                     shape: StadiumBorder(),
                     color: gb.yellowColor,
                     child: Text(
-                      'Restore Password',
+                      'Verify Now',
                       style: TextStyle(
                           color: gb.elementGreyColor,
                           fontSize: 16,
@@ -88,10 +86,7 @@ class _ForgotRestorePasswordState extends State<ForgotRestorePassword> {
                     ),
                     onPressed: () {
                       print('Send');
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ResetPassword()));
+                      Navigator.popUntil(context, ModalRoute.withName('/'));
                     },
                   ),
                 ),

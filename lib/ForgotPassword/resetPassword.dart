@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:delivery_food_delyo/globalStyle.dart' as gb;
+import 'package:flutter/material.dart' as prefix0;
 
 class ResetPassword extends StatefulWidget {
   @override
@@ -114,14 +115,15 @@ class _ResetPasswordState extends State<ResetPassword> {
                     shape: StadiumBorder(),
                     color: gb.yellowColor,
                     child: Text(
-                      'Sign In',
+                      'Reset Password',
                       style: TextStyle(
                           color: gb.elementGreyColor,
                           fontSize: 16,
                           fontWeight: FontWeight.w600),
                     ),
                     onPressed: () {
-                      print('Sign In');
+                      print('Reset Password');
+                      Navigator.popUntil(context, ModalRoute.withName('/signin'));
                     },
                   ),
                 ),
@@ -139,6 +141,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     ),
                     onTap: () {
                       print('Cancle');
+                      Navigator.popUntil(context, ModalRoute.withName('/signin'));
                     },
                   )),
                 ],

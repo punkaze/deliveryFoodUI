@@ -1,6 +1,8 @@
-import 'package:delivery_food_delyo/globalStyle.dart' as gb;
-import 'package:delivery_food_delyo/singIn.dart';
+import 'package:delivery_food_delyo/signIn.dart';
+import 'package:delivery_food_delyo/signUp.dart';
 import 'package:flutter/material.dart';
+
+import 'homePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +14,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => HomePage(),
+        '/signin' : (context) => SignInPage(),
+        '/signup' : (context) => SignUpPage()
+      },
     );
   }
 }
@@ -33,11 +40,21 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          child: FlatButton(
-            child: Text('Sign In'),
-            onPressed: () {
-              gb.nextPage(context, SignInPage());
-            },
+          child: Column(
+            children: <Widget>[
+              FlatButton(
+                child: Text('Sign In'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/signin');
+                },
+              ),
+              FlatButton(
+                child: Text('Sign Up'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/signup');
+                },
+              ),
+            ],
           ),
         ),
       )
