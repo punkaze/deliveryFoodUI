@@ -56,7 +56,7 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: TextField(
-                    cursorColor: gb.yellowColor,
+                    cursorColor: gb.baseColor,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       hintText: 'Enter Your Email',
@@ -65,7 +65,7 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                           borderSide:
                               BorderSide(color: gb.hintTextColor, width: 1.5)),
                       focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: gb.yellowColor)),
+                          borderSide: BorderSide(color: gb.baseColor)),
                       suffixIcon: validEmail
                           ? Icon(Icons.check, color: Colors.green)
                           : null,
@@ -94,14 +94,14 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(
-                            color: gb.yellowShadowColor,
+                            color: gb.shadeColor,
                             offset: Offset(0, 5),
                             blurRadius: 20,
                             spreadRadius: -10)
                       ]),
                   child: FlatButton(
                     shape: StadiumBorder(),
-                    color: gb.yellowColor,
+                    color: gb.baseColor,
                     child: Text(
                       'Send',
                       style: TextStyle(

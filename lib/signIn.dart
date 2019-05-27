@@ -62,7 +62,7 @@ class _SignInPageState extends State<SignInPage> {
                     InkWell(
                       child: Text(
                         'Forgot password?',
-                        style: TextStyle(color: gb.yellowColor),
+                        style: TextStyle(color: gb.baseColor),
                       ),
                       onTap: () {
                         Navigator.push(
@@ -81,7 +81,7 @@ class _SignInPageState extends State<SignInPage> {
                   child: Column(
                     children: <Widget>[
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: 'Your Email or Phone',
@@ -90,7 +90,7 @@ class _SignInPageState extends State<SignInPage> {
                               borderSide: BorderSide(
                                   color: gb.hintTextColor, width: 1.5)),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: gb.yellowColor)),
+                              borderSide: BorderSide(color: gb.baseColor)),
                           suffixIcon: validEmail
                               ? Icon(Icons.check, color: Colors.green)
                               : null,
@@ -112,7 +112,7 @@ class _SignInPageState extends State<SignInPage> {
                         height: 20,
                       ),
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
                             hintText: 'Password',
@@ -121,12 +121,12 @@ class _SignInPageState extends State<SignInPage> {
                                 borderSide: BorderSide(
                                     color: gb.hintTextColor, width: 1.5)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: gb.yellowColor)),
+                                borderSide: BorderSide(color: gb.baseColor)),
                             suffixIcon: GestureDetector(
                               child: Icon(Icons.visibility,
                                   color: _obscurePassword
                                       ? gb.hintTextColor
-                                      : gb.yellowColor),
+                                      : gb.baseColor),
                               onTap: () {
                                 setState(() {
                                   _obscurePassword = !_obscurePassword;
@@ -148,14 +148,14 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(
-                            color: gb.yellowShadowColor,
+                            color: gb.shadeColor,
                             offset: Offset(0, 5),
                             blurRadius: 20,
                             spreadRadius: -10)
                       ]),
                   child: FlatButton(
                     shape: StadiumBorder(),
-                    color: gb.yellowColor,
+                    color: gb.baseColor,
                     child: Text(
                       'Sign In',
                       style: TextStyle(
@@ -184,7 +184,7 @@ class _SignInPageState extends State<SignInPage> {
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
-                        color: gb.yellowColor,
+                        color: gb.baseColor,
                       ),
                     ),
                     onTap: () {

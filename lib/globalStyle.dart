@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-Color yellowColor = Color(0xFFFDDB00);
-Color yellowShadowColor = Color(0xFFFFC857);
+Color baseColor = Color.fromRGBO(255,82,69, 1);
+Color shadeColor = Color.fromRGBO(250,185,91, 1);
 Color backgroundColor = Color(0xFFEEF0F2);
 Color hintTextColor = Color(0xFFD2D4D6);
 Color elementColor = Colors.white;

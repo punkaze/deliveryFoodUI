@@ -69,14 +69,14 @@ class _VerifyNumberState extends State<VerifyNumberPage> {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(
-                            color: gb.yellowShadowColor,
+                            color: gb.shadeColor,
                             offset: Offset(0, 5),
                             blurRadius: 20,
                             spreadRadius: -10)
                       ]),
                   child: FlatButton(
                     shape: StadiumBorder(),
-                    color: gb.yellowColor,
+                    color: gb.baseColor,
                     child: Text(
                       'Verify Now',
                       style: TextStyle(
@@ -94,7 +94,7 @@ class _VerifyNumberState extends State<VerifyNumberPage> {
               // TODO: Time ticker
               Text(
                 "Resend confirmation code (1:11)",
-                style: TextStyle(color: gb.yellowColor),
+                style: TextStyle(color: gb.baseColor),
               )
             ],
           ),
@@ -114,7 +114,7 @@ class _VerifyNumberState extends State<VerifyNumberPage> {
             color: Colors.black12, borderRadius: BorderRadius.circular(10)),
         child: TextField(
           obscureText: true,
-          cursorColor: gb.yellowColor,
+          cursorColor: gb.baseColor,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
               contentPadding: const EdgeInsets.all(20),

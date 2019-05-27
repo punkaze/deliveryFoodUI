@@ -98,14 +98,14 @@ class _ForgotDialogState extends State<ForgotDialog>
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             boxShadow: [
                               BoxShadow(
-                                  color: gb.yellowShadowColor,
+                                  color: gb.shadeColor,
                                   offset: Offset(0, 5),
                                   blurRadius: 20,
                                   spreadRadius: -10)
                             ]),
                         child: FlatButton(
                           shape: StadiumBorder(),
-                          color: gb.yellowColor,
+                          color: gb.baseColor,
                           child: Text(
                             'Okey',
                             style: TextStyle(

@@ -61,7 +61,7 @@ class _SignUpState extends State<SignUpPage> {
                   child: Column(
                     children: <Widget>[
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: 'Your Name',
@@ -70,7 +70,7 @@ class _SignUpState extends State<SignUpPage> {
                               borderSide: BorderSide(
                                   color: gb.hintTextColor, width: 1.5)),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: gb.yellowColor)),
+                              borderSide: BorderSide(color: gb.baseColor)),
                         ),
                         controller: userFullName,
                       ),
@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUpPage> {
                         height: 20,
                       ),
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: 'Your Phone Number',
@@ -87,7 +87,7 @@ class _SignUpState extends State<SignUpPage> {
                               borderSide: BorderSide(
                                   color: gb.hintTextColor, width: 1.5)),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: gb.yellowColor)),
+                              borderSide: BorderSide(color: gb.baseColor)),
                         ),
                         controller: userPhoneNumber,
                       ),
@@ -95,7 +95,7 @@ class _SignUpState extends State<SignUpPage> {
                         height: 20,
                       ),
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         decoration: InputDecoration(
                             hintText: 'Location',
                             hintStyle: TextStyle(color: gb.hintTextColor),
@@ -103,12 +103,12 @@ class _SignUpState extends State<SignUpPage> {
                                 borderSide: BorderSide(
                                     color: gb.hintTextColor, width: 1.5)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: gb.yellowColor)),
+                                borderSide: BorderSide(color: gb.baseColor)),
                             suffixIcon: GestureDetector(
                               child: Icon(Icons.location_on,
                                   color: userLocation.text == ''
                                       ? gb.hintTextColor
-                                      : gb.yellowColor),
+                                      : gb.baseColor),
                             )),
                         controller: userLocation,
                       ),
@@ -116,7 +116,7 @@ class _SignUpState extends State<SignUpPage> {
                         height: 20,
                       ),
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
                             hintText: 'Password',
@@ -125,12 +125,12 @@ class _SignUpState extends State<SignUpPage> {
                                 borderSide: BorderSide(
                                     color: gb.hintTextColor, width: 1.5)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: gb.yellowColor)),
+                                borderSide: BorderSide(color: gb.baseColor)),
                             suffixIcon: GestureDetector(
                               child: Icon(Icons.visibility,
                                   color: _obscurePassword
                                       ? gb.hintTextColor
-                                      : gb.yellowColor),
+                                      : gb.baseColor),
                               onTap: () {
                                 setState(() {
                                   _obscurePassword = !_obscurePassword;
@@ -152,14 +152,14 @@ class _SignUpState extends State<SignUpPage> {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(
-                            color: gb.yellowShadowColor,
+                            color: gb.shadeColor,
                             offset: Offset(0, 5),
                             blurRadius: 20,
                             spreadRadius: -10)
                       ]),
                   child: FlatButton(
                     shape: StadiumBorder(),
-                    color: gb.yellowColor,
+                    color: gb.baseColor,
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
@@ -192,7 +192,7 @@ class _SignUpState extends State<SignUpPage> {
                     child: Text(
                       "Sign In",
                       style: TextStyle(
-                        color: gb.yellowColor,
+                        color: gb.baseColor,
                       ),
                     ),
                     onTap: () {

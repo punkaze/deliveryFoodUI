@@ -63,7 +63,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   child: Column(
                     children: <Widget>[
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         obscureText: true,
                         decoration: InputDecoration(
                           hintText: 'New Password',
@@ -72,7 +72,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                               borderSide: BorderSide(
                                   color: gb.hintTextColor, width: 1.5)),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: gb.yellowColor)),
+                              borderSide: BorderSide(color: gb.baseColor)),
                         ),
                         controller: newPassword,
                       ),
@@ -80,7 +80,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                         height: 20,
                       ),
                       TextField(
-                        cursorColor: gb.yellowColor,
+                        cursorColor: gb.baseColor,
                         obscureText: true,
                         decoration: InputDecoration(
                             hintText: 'Confirm Password',
@@ -89,7 +89,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                                 borderSide: BorderSide(
                                     color: gb.hintTextColor, width: 1.5)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: gb.yellowColor)),
+                                borderSide: BorderSide(color: gb.baseColor)),
                             ),
                         controller: confirmNewPassword,
                       )
@@ -106,14 +106,14 @@ class _ResetPasswordState extends State<ResetPassword> {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(
-                            color: gb.yellowShadowColor,
+                            color: gb.shadeColor,
                             offset: Offset(0, 5),
                             blurRadius: 20,
                             spreadRadius: -10)
                       ]),
                   child: FlatButton(
                     shape: StadiumBorder(),
-                    color: gb.yellowColor,
+                    color: gb.baseColor,
                     child: Text(
                       'Reset Password',
                       style: TextStyle(
@@ -136,7 +136,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     child: Text(
                       "Cancle",
                       style: TextStyle(
-                        color: gb.yellowColor, fontSize: 16, fontWeight: FontWeight.w500
+                        color: gb.baseColor, fontSize: 16, fontWeight: FontWeight.w500
                       ),
                     ),
                     onTap: () {
